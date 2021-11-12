@@ -117,6 +117,14 @@ def exercise_four():
     print(user_list, "\n", user_tuple)
 
     print("\nQuestion 5:")
+    object1 = StringObject()
+    object2 = StringObject()
+
+    object1.getString()
+    object2.getString()
+
+    object1.printString()
+    object2.printString()
 
 
 def factorial(x):
@@ -124,7 +132,16 @@ def factorial(x):
         return 2
     return x * factorial(x - 1)
 
+class StringObject:
+    def __init__(self):
+        self.string = ""
+
+    def getString(self):
+        self.string = input("input:\n")
+
+    def printString(self):
+        print(self.string.upper())
 
 if __name__ == '__main__':
-    # exercise_three()
+    exercise_three()
     exercise_four()
