@@ -1,0 +1,11 @@
+INFO:root:Input validated, file = "expedia_report_monthly_march_2018.xlsx", month = "april".
+INFO:root:Sheet names validated
+INFO:root:Data for April:
+INFO:root:	Calls Offered: 23074
+INFO:root:	Abandon after 30s: 5.24%
+INFO:root:	FCR: 85.90%
+INFO:root:	DSAT: 13.40%
+INFO:root:	CSAT: 78.70%
+INFO:root:	Promoters: Good (310)
+INFO:root:	Passives: Bad (97)
+INFO:root:	Detractors: Good (128)
