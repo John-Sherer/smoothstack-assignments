@@ -3,6 +3,7 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 # Helper function for validating phone numbers
 def validate_phone_numbers(db, column_name):
     result = 0
@@ -56,10 +57,9 @@ if __name__ == '__main__':
 
     # Check that this file has not already been processed
     processed_file_list = open('NYL.lst', 'r')
-    for line in processed_file_list.readlines():
-        if line == files[0]:
-            logging.warning("Warning, this file has already been processed. Exiting.")
-            # exit(1)
+    if processed_file_list.read().find(files[0]) != -1:
+        logging.warning("Warning, this file has already been processed. Exiting.")
+        exit(1)
 
     # Write file to list for future reference
     logging.info("File has not yet been processed, according to NYL.lst. Appending to list.")
@@ -122,6 +122,9 @@ if __name__ == '__main__':
     print(abbreviated_agents.head(20))
 
     logging.info("Creating histogram")
+
+    # Prevent histogram from printing excessively to the log file
+    logging.setLevel(40)
     histogram = agents_by_state.plot.bar()
     histogram.plot()
 
